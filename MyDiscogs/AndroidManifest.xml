@@ -1,0 +1,147 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cat.joronya.mydiscogs"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/discogs"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <service android:name=".service.MyDiscogsService" />
+        
+        <provider android:name=".data.ProfileProvider"
+         	android:authorities="cat.joronya.mydiscogs.profile" 
+         	android:exported="false"/>
+        
+        <provider android:name=".data.FolderProvider"
+         	android:authorities="cat.joronya.mydiscogs.folder" 
+         	android:exported="false"/>
+        
+        <provider android:name=".data.FieldProvider"
+         	android:authorities="cat.joronya.mydiscogs.field" 
+         	android:exported="false"/>
+        
+        <provider android:name=".data.ReleaseProvider"
+         	android:authorities="cat.joronya.mydiscogs.release" 
+         	android:exported="false"/>
+        
+        <provider android:name=".data.CollectionProvider"
+         	android:authorities="cat.joronya.mydiscogs.collection" 
+         	android:exported="false"/>
+        
+        <provider android:name=".data.LabelProvider"
+         	android:authorities="cat.joronya.mydiscogs.label" 
+         	android:exported="false"/>
+        
+        <provider android:name=".data.ArtistProvider"
+         	android:authorities="cat.joronya.mydiscogs.artist" 
+         	android:exported="false"/>
+        
+        <activity
+            android:name=".home.DiscogsActivity"
+            android:theme="@style/Theme.Base.AppCompat.Light.DarkActionBar"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:label="@string/discogs_title">
+            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+        </activity>
+        
+        <activity
+            android:name="cat.joronya.mydiscogs.profile.ProfileActivity"
+            android:theme="@style/Theme.Base.AppCompat.Light.DarkActionBar"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:label="@string/app_name">
+            
+            <intent-filter>
+				<action android:name="android.intent.action.VIEW"></action>
+				<category android:name="android.intent.category.DEFAULT"></category>
+				<category android:name="android.intent.category.BROWSABLE"></category>
+				<data android:scheme="mydiscogs"></data>
+			</intent-filter>
+        </activity>
+        
+        <activity
+            android:name="cat.joronya.mydiscogs.collection.CollectionActivity"
+            android:theme="@style/Theme.Base.AppCompat.Light.DarkActionBar"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:label="@string/collection_title">
+            
+            <meta-data android:name="android.app.default_searchable"
+                   android:value=".collection.CollectionSearchResultsActivity" />
+            
+        </activity>
+        
+        <activity
+            android:name="cat.joronya.mydiscogs.collection.CollectionSearchResultsActivity"
+            android:theme="@style/Theme.Base.AppCompat.Light.DarkActionBar"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:label="@string/collection_title"
+            android:parentActivityName=".collection.CollectionActivity">
+            
+            <meta-data
+            	android:name="android.support.PARENT_ACTIVITY"
+            	android:value=".collection.CollectionActivity" />
+            
+            <meta-data android:name="android.app.searchable"
+            	android:resource="@xml/searchable_collection" />
+            
+            <intent-filter>
+        		<action android:name="android.intent.action.SEARCH" />
+    		</intent-filter>
+            
+        </activity>
+        
+        <!-- Not used -->
+        <activity
+            android:name="cat.joronya.mydiscogs.collection.ArtistsActivity"
+            android:theme="@style/Theme.Base.AppCompat.Light.DarkActionBar"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:label="@string/collection_title">
+            
+            <meta-data android:name="android.app.default_searchable"
+                   android:value=".collection.ArtistsSearchResultsActivity" />
+            
+        </activity>
+        
+        <activity
+            android:name="cat.joronya.mydiscogs.collection.ArtistsSearchResultsActivity"
+            android:theme="@style/Theme.Base.AppCompat.Light.DarkActionBar"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:label="@string/collection_title"
+            android:parentActivityName=".collection.CollectionActivity">
+            
+            <meta-data
+            	android:name="android.support.PARENT_ACTIVITY"
+            	android:value=".collection.CollectionActivity" />
+            
+            <meta-data android:name="android.app.searchable"
+            	android:resource="@xml/searchable_artists" />
+            
+            <intent-filter>
+        		<action android:name="android.intent.action.SEARCH" />
+    		</intent-filter>
+            
+        </activity>
+        
+    </application>
+
+</manifest>

@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:tag="mobile"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#ffffff" >
+
+    
+    <LinearLayout 
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@drawable/button_rounded_corners_dark_gray"
+        android:orientation="vertical"
+        android:gravity="center">
+        
+    	<ImageView
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginTop="10dp"
+        	android:scaleType="fitXY"
+        	android:src="@drawable/discogs_white" />
+    
+		<TextView android:id="@+id/discogs_title"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginTop="20dp"
+        	android:layout_marginBottom="10dp"
+        	android:textSize="20sp"
+        	android:textColor="@color/white"
+        	android:textStyle="bold"
+        	android:gravity="center_horizontal"
+        	android:text="@string/needed_authentication_text_message" />
+		
+    </LinearLayout>
+
+    <Button android:id="@+id/login_button"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:text="@string/needed_authentication_profile_button"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:onClick="discogsLogin"
+        android:background="@drawable/pushable_green_button"/>
+    
+    
+    
+</LinearLayout>

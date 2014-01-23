@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="drawer_titles">
+        <item>Discogs</item>
+        <item>Profile</item>
+        <item>Collection</item>
+        <item>Wantlist</item>
+        <item>Marketplace</item>
+    </string-array>
+    
+	<string-array name="drawer_icons">
+        <item>discogs</item>
+        <item>discogs</item>
+        <item>discogs</item>
+        <item>discogs</item>
+        <item>discogs</item>
+    </string-array>
+    
+	<string-array name="genres">
+	    <item>Blues</item>
+	    <item>Brass And Military</item>
+	    <item>Childrens</item>
+	    <item>Classical</item>
+	    <item>Electronic</item>
+	    <item>Folk, World, And Country</item>
+	    <item>Funk / Soul</item>
+	    <item>Hip Hop</item>
+	    <item>Jazz</item>
+	    <item>Latin</item>
+	    <item>Non-music</item>
+	    <item>Pop</item>
+	    <item>Rock</item>
+	    <item>Reggae</item>
+	    <item>Reggae</item>
+	    <item>Stage And Screen</item>
+	</string-array>
+	
+	<string-array name="Blues">
+	    <item>Chicago Blues</item>
+	    <item>Country Blues</item>
+	    <item>Delta Blues</item>
+	    <item>East Coast Blues</item>
+	    <item>Electric Blues</item>
+	    <item>Harmonica Blues</item>
+	    <item>Jump Blues</item>
+	    <item>Louisiana Blues</item>
+	    <item>Modern Electric Blues</item>
+	    <item>Piano Blues</item>
+	    <item>Piedmont Blues</item>
+	    <item>Texas Blues</item>
+	</string-array>
+	
+	<string-array name="BrassAndMilitary">
+	    <item>Brass Band</item>
+	    <item>Marches</item>
+	    <item>Military</item>
+	    <item>Pipe &amp; Drum</item>
+	</string-array>
+	
+	<string-array name="Childrens">
+	    <item>Educational</item>
+	    <item>Nursery Rhymes</item>
+	    <item>Story</item>
+	</string-array>
+	
+	<string-array name="Classical">
+	    <item>Baroque</item>
+	    <item>Classical</item>
+	    <item>Contemporary</item>
+	    <item>Early</item>
+	    <item>Medieval</item>
+   	    <item>Modern</item>
+   	    <item>Neo-Classical</item>
+   	    <item>Neo-Romantic</item>
+   	    <item>Post-Modern</item>
+   	    <item>Renaissance</item>
+   	    <item>Romantic</item>
+	</string-array>
+	
+	<string-array name="Electronic">
+	    <item>Abstract</item>
+	    <item>Experimental</item>
+	    <item>Musique Concrète</item>
+	    <item>Acid</item>
+	    <item>Ambient</item>
+	    <item>Dark Ambient</item>
+	    <item>New Age</item>
+	    <item>Downtempo</item>
+	    <item>Acid Jazz</item>
+	    <item>Big Beat</item>
+	    <item>Breakbeat</item>
+	    <item>Breaks</item>
+	    <item>Freestyle</item>
+	    <item>Jazzdance</item>
+	    <item>Broken Beat</item>
+	    <item>Glitch</item>
+	    <item>Disco</item>
+	    <item>Italo-Disco</item>
+	    <item>Italodance</item>
+	    <item>Drum n Bass</item>
+	    <item>Dubstep</item>
+	    <item>Jumpstyle</item>
+	    <item>Jungle</item>
+	    <item>Dub</item>
+	    <item>EBM</item>
+	    <item>IDM</item>
+	    <item>Industrial</item>
+	    <item>New Beat</item>
+	    <item>Electro</item>
+	    <item>Synth-pop</item>
+	    <item>Chiptune</item>
+	    <item>Ghetto</item>
+	    <item>Hardcore</item>
+	    <item>Breakcore</item>
+	    <item>Gabber</item>
+	    <item>Happy Hardcore</item>
+	    <item>Hardstyle</item>
+	    <item>Speedcore</item>
+	    <item>Hi NRG</item>
+	    <item>Hip Hop</item>
+	    <item>Illbient</item>
+	    <item>Trip Hop</item>
+	    <item>Leftfield</item>
+	    <item>House</item>
+	    <item>Acid House</item>
+	    <item>Deep House</item>
+	    <item>Euro House</item>
+	    <item>Garage House</item>
+	    <item>Hard House</item>
+	    <item>Hip-House</item>
+	    <item>Progressive House</item>
+	    <item>Tech House</item>
+	    <item>Tribal House</item>
+	    <item>Krautrock</item>
+	    <item>Latin</item>
+	    <item>Modern Classical</item>
+	    <item>Neofolk</item>
+	    <item>New Wave</item>
+	    <item>Darkwave</item>
+	    <item>Drone</item>
+	    <item>Noise</item>
+	    <item>Power Electronics</item>
+	    <item>Rhythmic Noise</item>
+	    <item>Techno</item>
+	    <item>Dub Techno</item>
+	    <item>Future Jazz</item>
+	    <item>Makina</item>
+	    <item>Minimal</item>
+	    <item>Tribal</item>
+	    <item>Trance</item>
+	    <item>Goa Trance</item>
+	    <item>Hard Trance</item>
+	    <item>Progressive Trance</item>
+	    <item>Psy-Trance</item>
+	    <item>Grime</item>
+	    <item>Speed Garage</item>
+	    <item>UK Garage</item>
+	</string-array>
+	
+	<string-array name="FolkWorldAndCountry">
+	    <item>Country</item>
+	    <item>Bluegrass</item>
+	    <item>Cajun</item>
+	    <item>Honky Tonk</item>
+	    <item>Zouk</item>
+	    <item>Zydeco</item>
+	    <item>Folk</item>
+	</string-array>
+	
+	<string-array name="FunkSoul">
+	    <item>Afrobeat</item>
+	    <item>Disco</item>
+	    <item>Funk</item>
+	    <item>Free Funk</item>
+	    <item>Bayou Funk</item>
+	    <item>P.Funk</item>
+	    <item>Gogo</item>
+	    <item>Gospel</item>
+	    <item>Neo Soul</item>
+	    <item>New Jack Swing</item>
+	    <item>Psychedelic</item>
+	    <item>Rhythm &amp; Blues</item>
+	    <item>Soul</item>
+	    <item>Swingbeat</item>
+	</string-array>
+	
+	<string-array name="HipHop">
+	    <item>Bass Music</item>
+	    <item>Bounce</item>
+	    <item>Britcore</item>
+	    <item>Conscious</item>
+	    <item>Crunk</item>
+	    <item>Cut-up/DJ</item>
+	    <item>DJ Battle Tool</item>
+	    <item>Electro</item>
+	    <item>Gangsta</item>
+	    <item>Go-Go</item>
+	    <item>Grime</item>
+	    <item>Horrorcore</item>
+	    <item>Hyphy</item>
+	    <item>Instrumental</item>
+	    <item>Kwaito</item>
+	    <item>Pop Rap</item>
+	    <item>Ragga HipHop</item>
+	    <item>RnB/Swing</item>
+	    <item>Screw</item>
+	    <item>Thug Rap</item>
+	    <item>Trip Hop</item>
+	</string-array>
+	
+	<string-array name="Jazz">
+	    <item>Afro-Cuban Jazz</item>
+	    <item>Bossa Nova</item>
+	    <item>Latin Jazz</item>
+	    <item>Afrobeat</item>
+	    <item>Big Band</item>
+	    <item>Dixieland</item>
+	    <item>Ragtime</item>
+	    <item>Swing</item>
+	    <item>Bop</item>
+	    <item>Hard Bop</item>
+	    <item>Post Bop</item>
+	    <item>Contemporary Jazz</item>
+	    <item>Cool Jazz</item>
+	    <item>Easy Listening</item>
+	    <item>Smooth Jazz</item>
+	    <item>Free Improvisation</item>
+	    <item>Free Jazz</item>
+	    <item>Fusion</item>
+	    <item>Soul-Jazz</item>
+	    <item>Gypsy Jazz</item>
+	    <item>Jazz-Funk</item>
+	    <item>Jazz-Rock</item>
+	    <item>Modal</item>
+	    <item>Space-Age</item>
+	</string-array>
+	
+	<string-array name="Latin">
+	    <item>Afro-Cuban</item>
+	    <item>Beguine</item>
+	    <item>Bolero</item>
+	    <item>Cha-Cha</item>
+	    <item>Charanga</item>
+	    <item>Conjunto</item>
+	    <item>Cubano</item>
+	    <item>Danzon</item>
+	    <item>Descarga</item>
+	    <item>Guaguancó</item>
+	    <item>Mambo</item>
+	    <item>Pachanga</item>
+	    <item>Rumba</item>
+	    <item>Salsa</item>
+	    <item>Son</item>
+	    <item>Sonero</item>
+	    <item>Timba</item>
+	    <item>Bachata</item>
+	    <item>Batucada</item>
+	    <item>Bossanova</item>
+	    <item>Lambada</item>
+	    <item>Samba</item>
+	    <item>Boogaloo</item>
+	    <item>Compas</item>
+	    <item>Corrido</item>
+	    <item>Cuatro</item>
+	    <item>Cumbia</item>
+	    <item>Vallenato</item>
+	    <item>Flamenco</item>
+	    <item>Forro</item>
+	    <item>Jibaro</item>
+	    <item>MPB</item>
+	    <item>Merengue</item>
+	    <item>Mariachi</item>
+	    <item>Marimba</item>
+	    <item>Norteño</item>
+	    <item>Ranchera</item>
+	    <item>Tejano</item>
+	    <item>Nueva Cancion</item>
+	    <item>Nueva Trova</item>
+	    <item>Trova</item>
+	    <item>Plena</item>
+	    <item>Quechua</item>
+	    <item>Reggaeton</item>
+	    <item>Tango</item>
+	</string-array>
+	
+	<string-array name="Nonmusic">
+	    <item>Audiobook</item>
+	    <item>Comedy</item>
+	    <item>Dialogue</item>
+	    <item>Education</item>
+	    <item>Field Recording</item>
+	    <item>Interview</item>
+	    <item>Monolog</item>
+	    <item>Movie Effects</item>
+	    <item>Poetry</item>
+	    <item>Political</item>
+	    <item>Promotional</item>
+	    <item>Public Service Announcement</item>
+	    <item>Radioplay</item>
+	    <item>Religious</item>
+	    <item>Sermon</item>
+	    <item>Special Effects</item>
+	    <item>Speech</item>
+	    <item>Spoken Word</item>
+	    <item>Technical</item>
+	    <item>Therapy</item>
+	</string-array>
+	
+	<string-array name="Pop">
+	    <item>Ballad</item>
+	    <item>Bollywood</item>
+	    <item>Chanson</item>
+	    <item>Enka</item>
+	    <item>Europop</item>
+	    <item>J-pop</item>
+	    <item>Karaoke</item>
+	    <item>Music Hall</item>
+	    <item>Novelty</item>
+	    <item>Parody</item>
+	    <item>Schlager</item>
+	    <item>Vocal</item>
+	</string-array>
+	
+	<string-array name="Rock">
+	    <item>Acoustic</item>
+	    <item>Alternative Rock</item>
+	    <item>Arena Rock</item>
+	    <item>Art Rock</item>
+	    <item>Blues Rock</item>
+	    <item>Country Rock</item>
+	    <item>Classic Rock</item>
+	    <item>Folk Rock</item>
+	    <item>Garage Rock</item>
+	    <item>Goth Rock</item>
+	    <item>Glam</item>
+	    <item>Hard Rock</item>
+	    <item>Indie Rock</item>
+	    <item>Math Rock</item>
+	    <item>Pop Rock</item>
+	    <item>Post Rock</item>
+	    <item>Prog Rock</item>
+	    <item>Psychedelic Rock</item>
+	    <item>Southern Rock</item>
+	    <item>Space Rock</item>
+	    <item>Soft Rock</item>
+	    <item>Stoner Rock</item>
+	    <item>Symphonic Rock</item>
+	    <item>Avantgarde</item>
+	    <item>Brit Pop</item>
+	    <item>Doo Wop</item>
+	    <item>Heavy Metal</item>
+	    <item>Black Metal</item>
+	    <item>Death Metal</item>
+	    <item>Doom Metal</item>
+	    <item>Nu Metal</item>
+	    <item>Viking Metal</item>
+	    <item>New Wave</item>
+	    <item>Funk Metal</item>
+	    <item>Speed Metal</item>
+	    <item>Emo</item>
+	    <item>Ethereal</item>
+	    <item>Experimental</item>
+	    <item>Grindcore</item>
+	    <item>Grunge</item>
+	    <item>Hardcore</item>
+	    <item>Noise</item>
+	    <item>Thrash</item>
+	    <item>Industrial</item>
+	    <item>Lo-Fi</item>
+	    <item>Lounge</item>
+	    <item>Power Pop</item>
+	    <item>Shoegaze</item>
+	    <item>Shoegazer</item>
+	    <item>Mod</item>
+	    <item>Neofolk</item>
+	    <item>Oi</item>
+	    <item>Punk</item>
+	    <item>Parody</item>
+	    <item>Rock &amp; Roll</item>
+	    <item>Rockabilly</item>
+	    <item>Psychobilly</item>
+	    <item>Skiffle</item>
+	    <item>Rocksteady</item>
+	    <item>Ska</item>
+	    <item>Surf</item>
+	</string-array>
+	
+	<string-array name="Reggae">
+	    <item>Calypso</item>
+	    <item>Soca</item>
+	    <item>Steel Band</item>
+	    <item>Dancehall</item>
+	    <item>Ragga</item>
+	    <item>Dub</item>
+	    <item>Dub Poetry</item>
+	    <item>Junkanoo</item>
+	    <item>Mento</item>
+	    <item>Reggae</item>
+	    <item>Lovers Rock</item>
+	    <item>Reggae Gospel</item>
+	    <item>Reggae-Pop</item>
+	    <item>Roots Reggae</item>
+	    <item>Rapso</item>
+	    <item>Rocksteady</item>
+	    <item>Ska</item>
+	</string-array>
+	
+	<string-array name="StageAndScreen">
+	    <item>Musical</item>
+	    <item>Score</item>
+	    <item>Soundtrack</item>
+	    <item>Theme</item>
+	</string-array>
+
+</resources>

@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:gravity="center_vertical">
+    
+    <ImageView android:id="@+id/item_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/noavatar"/>
+    
+    <TextView android:id="@+id/item_artist"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="60dp"
+        android:gravity="center_vertical|left"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Credence Clearwater Revival"/>
+    
+    <View android:id="@+id/item_align"
+        android:layout_width="5dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"/>
+    
+    <TextView android:id="@+id/item_incollection"
+        android:layout_width="wrap_content"
+        android:minWidth="20dp"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/item_align"
+        android:layout_marginTop="13dp"
+        android:padding="4dp"
+        android:text="2"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:background="@drawable/button_round_red" />
+    
+    <TextView android:id="@+id/item_inwantlist"
+        android:layout_width="wrap_content"
+        android:minWidth="20dp"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/item_incollection"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="13dp"
+        android:padding="4dp"
+        android:text="12"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:background="@drawable/button_round_green" />
+    
+</RelativeLayout>

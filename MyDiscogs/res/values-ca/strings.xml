@@ -1,0 +1,39 @@
+<resources>
+
+    <string name="app_name">MyDiscogs</string>
+    <string name="discogs_title">Discogs</string>
+    <string name="discogs_actionbar_title">Discogs</string>
+    <string name="discogs_text_message">Cerca discos a Discogs™ amb el cercador de la barra superior.</string>
+    <string name="login_title">Entra</string>
+    <string name="login_actionbar_title">Entra a Discogs™</string>
+    <string name="login_text_message">Entra al teu compte de Discogs™ i navega per la teva col·lecció.</string>
+    <string name="login_login_button">Entra a Discogs™</string>
+    <string name="login_register_button">Registra\'t a Discogs™</string>
+    <string name="login_text_progress">Entrant a discogs&#8230;</string>
+    <string name="profile_actionbar_title">Perfil</string>
+    <string name="profile_text_message">El teu perfil de Discogs™ no s\'ha carregat&#8230;</string>
+    <string name="profile_text_progress">Descarregant perfil&#8230;</string>
+    <string name="profile_logout_menu">Surt</string>
+    <string name="profile_refresh_menu">Refresca</string>
+    <string name="profile_sync_button">Actualitza</string>
+    <string name="needed_authentication_text_message">Has d\'estar autenticat per a poder veure les dades d\'aquesta secció.</string>
+    <string name="needed_authentication_profile_button">Entra a la secció de perfil</string>
+    <string name="collection_title">Col·lecció</string>
+    <string name="collection_actionbar_title">Col·lecció</string>
+    <string name="collection_text_message">Navega i administra les edicions de la teva col·lecció de Discogs™.</string>
+    <string name="collection_refresh_menu">Actualitza</string>
+    <string name="collection_text_progress">Actualitzar la col·lecció pot tardar uns minuts, la actualització es farà en segon plà.</string>
+    <string name="collection_cancel_progress">Cancel·lar</string>
+    <string name="collection_ok_progress">Continuar</string>
+    <string name="collection_search_hint">cerca edicions</string>
+    <string name="collection_search_title">Cerca</string>
+    <string name="collection_releases_tab_title">Edicions</string>
+    <string name="collection_recent_tab_title">Recents</string>
+    <string name="collection_artists_tab_title">Artistes</string>
+    <string name="collection_labels_tab_title">Segells</string>
+    <string name="artists_text_message">Navega i administra els artistes de la teva col·lecció de Discogs™.</string>
+    <string name="artists_search_hint">cerca artistes</string>
+    <string name="artists_search_title">Cerca</string>
+    <string name="artists_actionbar_title">Artistes</string>
+    
+</resources>

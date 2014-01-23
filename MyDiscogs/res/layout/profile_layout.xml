@@ -1,0 +1,390 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:tag="mobile"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#ffffff" >
+
+    <RelativeLayout android:id="@+id/profile_data"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="10dp">
+        
+        <ImageView android:id="@+id/profile_avatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="1dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/noavatar"
+            android:background="@color/dark_gray"/>
+        
+        <TextView android:id="@+id/profile_username"
+            android:layout_width="fill_parent"
+            android:layout_height="25dp"
+            android:layout_marginLeft="110dp"
+            android:layout_alignParentTop="true"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="polecito"/>
+        
+        <TextView android:id="@+id/profile_name"
+            android:layout_width="fill_parent"
+            android:layout_height="17dp"
+            android:layout_marginLeft="110dp"
+            android:layout_below="@+id/profile_username"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Pol Ferre"/>
+        
+        <TextView android:id="@+id/profile_location"
+            android:layout_width="fill_parent"
+            android:layout_height="17dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/profile_name"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Lleida, Catalunya"/>
+        
+        <TextView android:id="@+id/profile_registered"
+            android:layout_width="fill_parent"
+            android:layout_height="17dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/profile_location"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Joined February 28, 2012"/>
+        
+        <TextView android:id="@+id/profile_home_page"
+            android:layout_width="fill_parent"
+            android:layout_height="17dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/profile_registered"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="#0000FF"
+            android:onClick="showHomePage"
+            android:clickable="true"
+            android:text="Home Page"/>
+        
+        <TextView android:id="@+id/profile_profile"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/profile_home_page"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Profile.... ..."/>
+        
+        <TextView android:id="@+id/profile_releases"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/profile_profile"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Releases"/>
+        
+        <RelativeLayout android:id="@+id/profile_contributed_row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/profile_releases">
+            
+            <TextView android:id="@+id/profile_contributed"
+            	android:layout_width="100dp"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentRight="true"
+            	android:gravity="right"
+            	android:textStyle="normal"
+            	android:textSize="14sp"
+            	android:textColor="@color/black"
+            	android:text="523"/>
+            
+            <TextView android:id="@+id/profile_contributed_label"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentRight="true"
+            	android:paddingRight="110dp"
+            	android:textStyle="normal"
+            	android:textSize="14sp"
+            	android:textColor="@color/black"
+            	android:background="@drawable/shape_line"
+            	android:text="Contributed"/>
+            
+        </RelativeLayout>
+        
+        <RelativeLayout android:id="@+id/profile_pending_row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/profile_contributed_row">
+            
+            <TextView android:id="@+id/profile_pending"
+            	android:layout_width="100dp"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentRight="true"
+            	android:gravity="right"
+            	android:textStyle="normal"
+            	android:textSize="14sp"
+            	android:textColor="@color/black"
+            	android:text="392"/>
+            
+            <TextView android:id="@+id/profile_pending_label"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentRight="true"
+            	android:paddingRight="110dp"
+            	android:textStyle="normal"
+            	android:textSize="14sp"
+            	android:textColor="@color/black"
+            	android:background="@drawable/shape_line"
+            	android:text="Pending"/>
+            
+        </RelativeLayout>
+        
+        <RelativeLayout android:id="@+id/profile_collection_row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/profile_pending_row">
+            
+            <TextView android:id="@+id/profile_collection"
+            	android:layout_width="100dp"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentRight="true"
+            	android:gravity="right"
+            	android:textStyle="normal"
+            	android:textSize="14sp"
+            	android:textColor="@color/black"
+            	android:text="1434"/>
+            
+            <TextView android:id="@+id/profile_collection_label"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentRight="true"
+            	android:paddingRight="110dp"
+            	android:textStyle="normal"
+            	android:textSize="14sp"
+            	android:textColor="@color/black"
+            	android:background="@drawable/shape_line"
+            	android:text="In collection"/>
+            
+        </RelativeLayout>
+        
+        <RelativeLayout android:id="@+id/profile_wantlist_row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/profile_collection_row">
+            
+            <TextView android:id="@+id/profile_wantlist"
+            	android:layout_width="100dp"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentRight="true"
+            	android:gravity="right"
+            	android:textStyle="normal"
+            	android:textSize="14sp"
+            	android:textColor="@color/black"
+            	android:text="3956"/>
+            
+            <TextView android:id="@+id/profile_wantlist_label"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentRight="true"
+            	android:paddingRight="110dp"
+            	android:textStyle="normal"
+            	android:textSize="14sp"
+            	android:textColor="@color/black"
+            	android:background="@drawable/shape_line"
+            	android:text="In wantlist"/>
+            
+        </RelativeLayout>
+        
+        <RelativeLayout android:id="@+id/profile_for_sale_row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/profile_wantlist_row">
+            
+            <TextView android:id="@+id/profile_for_sale"
+            	android:layout_width="100dp"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentRight="true"
+            	android:gravity="right"
+            	android:textStyle="normal"
+            	android:textSize="14sp"
+            	android:textColor="@color/black"
+            	android:text="0"/>
+            
+            <TextView android:id="@+id/profile_for_sale_label"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentRight="true"
+            	android:paddingRight="110dp"
+            	android:textStyle="normal"
+            	android:textSize="14sp"
+            	android:textColor="@color/black"
+            	android:background="@drawable/shape_line"
+            	android:text="Releases for sale"/>
+            
+        </RelativeLayout>
+        
+        <RelativeLayout android:id="@+id/profile_rated_row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/profile_for_sale_row">
+            
+            <TextView android:id="@+id/profile_rated"
+            	android:layout_width="100dp"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentRight="true"
+            	android:gravity="right"
+            	android:textStyle="normal"
+            	android:textSize="14sp"
+            	android:textColor="@color/black"
+            	android:text="4"/>
+            
+            <TextView android:id="@+id/profile_rated_label"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentRight="true"
+            	android:paddingRight="110dp"
+            	android:textStyle="normal"
+            	android:textSize="14sp"
+            	android:textColor="@color/black"
+            	android:background="@drawable/shape_line"
+            	android:text="Releases rated"/>
+            
+        </RelativeLayout>
+        
+        <RelativeLayout android:id="@+id/profile_ratingavg_row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/profile_rated_row">
+            
+            <TextView android:id="@+id/profile_ratingavg"
+            	android:layout_width="100dp"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentRight="true"
+            	android:gravity="right"
+            	android:textStyle="normal"
+            	android:textSize="14sp"
+            	android:textColor="@color/black"
+            	android:text="3.92"/>
+            
+            <TextView android:id="@+id/profile_ratingavg_label"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentRight="true"
+            	android:paddingRight="110dp"
+            	android:textStyle="normal"
+            	android:textSize="14sp"
+            	android:textColor="@color/black"
+            	android:background="@drawable/shape_line"
+            	android:text="Rating average"/>
+            
+        </RelativeLayout>
+        
+        <TextView android:id="@+id/profile_contributor_stats"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/profile_ratingavg_row"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Contributor stats"/>
+        
+        <RelativeLayout android:id="@+id/profile_rank_row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/profile_contributor_stats">
+            
+            <TextView android:id="@+id/profile_rank"
+            	android:layout_width="100dp"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentRight="true"
+            	android:gravity="right"
+            	android:textStyle="normal"
+            	android:textSize="14sp"
+            	android:textColor="@color/black"
+            	android:text="2366"/>
+            
+            <TextView android:id="@+id/profile_rank_label"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentRight="true"
+            	android:paddingRight="110dp"
+            	android:textStyle="normal"
+            	android:textSize="14sp"
+            	android:textColor="@color/black"
+            	android:background="@drawable/shape_line"
+            	android:text="Rank Points"/>
+            
+        </RelativeLayout>
+              
+    </RelativeLayout>
+    
+    <LinearLayout android:id="@+id/profile_no_data"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+    
+    	<LinearLayout 
+        	android:layout_width="300dp"
+        	android:layout_height="wrap_content"
+        	android:padding="20dp"
+        	android:background="@drawable/button_rounded_corners_dark_gray"
+        	android:orientation="vertical"
+        	android:gravity="center">
+        
+    		<ImageView
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:layout_marginTop="10dp"
+        		android:scaleType="fitXY"
+        		android:src="@drawable/discogs_white" />
+    
+			<TextView android:id="@+id/discogs_title"
+	        	android:layout_width="wrap_content"
+    	    	android:layout_height="wrap_content"
+        		android:layout_marginTop="20dp"
+        		android:layout_marginBottom="10dp"
+        		android:textSize="20sp"
+        		android:textColor="@color/white"
+        		android:textStyle="bold"
+        		android:gravity="center_horizontal"
+        		android:text="@string/profile_text_message" />
+    
+    	</LinearLayout>
+    	
+    	<Button android:id="@+id/profile_button"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="5dp"
+            android:text="@string/profile_sync_button"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:onClick="discogsProfile"
+            android:background="@drawable/pushable_green_button"/>
+    
+    </LinearLayout>
+
+</LinearLayout>

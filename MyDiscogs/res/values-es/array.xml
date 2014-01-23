@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="drawer_titles">
+        <item>Discogs</item>
+        <item>Perfil</item>
+        <item>Colección</item>
+        <item>Lista de deseos</item>
+        <item>Mercado</item>
+    </string-array>
+    
+	<string-array name="drawer_icons">
+        <item>discogs</item>
+        <item>discogs</item>
+        <item>discogs</item>
+        <item>discogs</item>
+        <item>discogs</item>
+    </string-array>
+    
+</resources>
