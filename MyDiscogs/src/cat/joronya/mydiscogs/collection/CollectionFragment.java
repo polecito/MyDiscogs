@@ -21,8 +21,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import cat.joronya.mydiscogs.R;
+import cat.joronya.mydiscogs.collection.CollectionRealseAdapter.ViewHolder;
 import cat.joronya.mydiscogs.data.Collection;
 import cat.joronya.mydiscogs.data.Release;
 import cat.joronya.utils.ui.OnProgressListener;
@@ -85,7 +88,19 @@ public class CollectionFragment extends Fragment
 		// recuperem el gridview i setejem l'adapter
 		GridView gridview = (GridView)getView().findViewById(R.id.gridview);
 		gridview.setAdapter(mAdapter);
-		        
+		gridview.setOnItemClickListener(new OnItemClickListener() 
+		{
+	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) 
+	        {
+	        	ViewHolder viewHolder = (ViewHolder)v.getTag();
+	        	Intent intent = new Intent(CollectionFragment.this.getActivity().getBaseContext(), ReleaseDetailActivity.class);
+	        	intent.putExtra(ReleaseDetailActivity.RELEASE_ID_EXTRA, viewHolder.id);
+	        	intent.putExtra(ReleaseDetailActivity.TITLE_EXTRA, viewHolder.titleView.getText());
+	        	startActivity(intent);
+	        	CollectionFragment.this.getActivity().overridePendingTransition(0,0);
+	        }
+	    });
+		
 		 // initialize the loader
         getLoaderManager().initLoader(GRID_LOADER, null, this);
 	}

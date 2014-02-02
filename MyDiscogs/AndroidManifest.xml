@@ -142,6 +142,20 @@
             
         </activity>
         
+        <activity
+            android:name="cat.joronya.mydiscogs.collection.ReleaseDetailActivity"
+            android:theme="@style/Theme.Base.AppCompat.Light.DarkActionBar"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:label="@string/release_detail_title"
+            android:parentActivityName=".collection.CollectionActivity">
+            
+            <meta-data
+            	android:name="android.support.PARENT_ACTIVITY"
+            	android:value=".collection.CollectionActivity" />
+            
+        </activity>
+        
     </application>
 
 </manifest>

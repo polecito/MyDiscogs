@@ -20,9 +20,11 @@
   <color name="white">#FFFFFF</color>
   <color name="gray">#a9a9a9</color>
   <color name="dark_gray">#333333</color>
+  <color name="light_gray">#e5e5e5</color>
   <color name="discogs_blue">#4588c4</color>
   <color name="discogs_light_green">#60c43f</color>
   <color name="discogs_dark_green">#49972e</color>
   <color name="discogs_red">#bf3a38</color>
+  <color name="discogs_gray">#444444</color>
   
 </resources>

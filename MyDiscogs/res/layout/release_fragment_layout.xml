@@ -1,0 +1,409 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:tag="mobile"
+    android:orientation="vertical"
+    android:gravity="top"
+    android:background="#ffffff" >
+
+    <LinearLayout android:id="@+id/collection_empty"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@drawable/button_rounded_corners_dark_gray"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+        
+    	<ImageView
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:scaleType="fitXY"
+        	android:layout_marginTop="10dp"
+        	android:src="@drawable/discogs_white" />
+    
+		<TextView android:id="@+id/collection_title"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginTop="20dp"
+        	android:layout_marginBottom="10dp"
+        	android:textSize="20sp"
+        	android:textColor="@color/white"
+        	android:textStyle="bold"
+        	android:gravity="center_horizontal"
+        	android:text="@string/release_text_message" />
+		
+    </LinearLayout>
+    
+    <ScrollView android:id="@+id/release_scroll"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent">
+		
+    <LinearLayout 
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="vertical">
+    
+    <RelativeLayout android:id="@+id/release_main"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+		
+        <ImageView android:id="@+id/release_cover"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="1dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/default_release"
+            android:background="@color/dark_gray"/>
+        
+        <TextView android:id="@+id/release_artist"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
+            android:layout_alignParentTop="true"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:text="Nazi Punks Fuck Off / Moral Majoritty"/>
+        
+        <TextView android:id="@+id/release_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/release_artist"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:text="Dead Kennedy\'s"/>
+        
+	</RelativeLayout>
+	
+    <RelativeLayout android:id="@+id/release_label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        
+        <TextView android:id="@+id/release_label_label"
+        	android:layout_width="80dp"
+        	android:layout_height="match_parent"
+        	android:layout_alignParentLeft="true"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Label:"/>
+        
+        <LinearLayout android:id="@+id/release_label_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical" />
+        
+	</RelativeLayout>
+	
+    <RelativeLayout android:id="@+id/release_series"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        
+        <TextView android:id="@+id/release_series_label"
+        	android:layout_width="80dp"
+        	android:layout_height="match_parent"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Series:"/>
+        
+        <LinearLayout android:id="@+id/release_series_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical" />
+        
+	</RelativeLayout>
+    
+    <RelativeLayout android:id="@+id/release_format"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        
+        <TextView android:id="@+id/release_format_label"
+        	android:layout_width="80dp"
+        	android:layout_height="match_parent"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Format:"/>
+        
+        <LinearLayout android:id="@+id/release_formats_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical" />
+        
+    </RelativeLayout>
+        
+    <LinearLayout android:id="@+id/release_country"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        
+        <TextView android:id="@+id/release_country_label"
+        	android:layout_width="80dp"
+        	android:layout_height="match_parent"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Country:"/>
+        
+        <TextView android:id="@+id/release_country_value"
+        	android:layout_width="fill_parent"
+        	android:layout_height="match_parent"
+        	android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Catalunya"/>
+        
+    </LinearLayout>
+        
+    <LinearLayout android:id="@+id/release_released"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        
+        <TextView android:id="@+id/release_released_label"
+        	android:layout_width="80dp"
+        	android:layout_height="match_parent"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Released:"/>
+        
+        <TextView android:id="@+id/release_released_value"
+        	android:layout_width="fill_parent"
+        	android:layout_height="match_parent"
+        	android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="March 2014"/>
+        
+    </LinearLayout>
+        
+    <RelativeLayout android:id="@+id/release_genres"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        
+        <TextView android:id="@+id/release_genres_label"
+        	android:layout_width="80dp"
+        	android:layout_height="match_parent"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Genres:"/>
+        
+        <LinearLayout android:id="@+id/release_genres_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical" />
+        
+    </RelativeLayout>
+        
+    <RelativeLayout android:id="@+id/release_styles"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        
+        <TextView android:id="@+id/release_styles_label"
+        	android:layout_width="80dp"
+        	android:layout_height="match_parent"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Styles:"/>
+        
+        <LinearLayout android:id="@+id/release_styles_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical" />
+        
+    </RelativeLayout>
+        
+    <RelativeLayout android:id="@+id/release_tracklist"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        
+        <TextView android:id="@+id/release_tracklist_label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Tracklist"/>
+        
+        <LinearLayout android:id="@+id/release_tracklist_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/release_tracklist_label"
+            android:orientation="vertical" />
+        
+	</RelativeLayout>
+	
+    <RelativeLayout android:id="@+id/release_companies"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        
+        <TextView android:id="@+id/release_companies_label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Companies etc"/>
+        
+        <View android:id="@+id/release_companies_line"
+        	android:layout_width="fill_parent"
+        	android:layout_height="5dp"
+        	android:background="@drawable/shape_line_top"
+        	android:layout_below="@+id/release_companies_label"/>
+        
+        <LinearLayout android:id="@+id/release_companies_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/release_companies_line"
+            android:orientation="vertical" />
+        
+	</RelativeLayout>
+	
+    <RelativeLayout android:id="@+id/release_credits"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        
+        <TextView android:id="@+id/release_credits_label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Credits" />
+        
+        <View android:id="@+id/release_credits_line"
+        	android:layout_width="fill_parent"
+        	android:layout_height="5dp"
+        	android:background="@drawable/shape_line_top"
+        	android:layout_below="@+id/release_credits_label"/>
+        
+        <LinearLayout android:id="@+id/release_credits_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/release_credits_line"
+            android:orientation="vertical" />
+        
+	</RelativeLayout>
+	
+    <RelativeLayout android:id="@+id/release_notes"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        
+        <TextView android:id="@+id/release_notes_label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Notes"/>
+        
+        <View android:id="@+id/release_notes_line"
+        	android:layout_width="fill_parent"
+        	android:layout_height="5dp"
+        	android:background="@drawable/shape_line_top"
+        	android:layout_below="@+id/release_notes_label"/>
+        
+        <TextView android:id="@+id/release_notes_value"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/release_notes_line" />
+        
+	</RelativeLayout>
+	
+    <RelativeLayout android:id="@+id/release_identifiers"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        
+        <TextView android:id="@+id/release_identifiers_label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Barcode and Other Identifiers"/>
+        
+        <View android:id="@+id/release_identifiers_line"
+        	android:layout_width="fill_parent"
+        	android:layout_height="5dp"
+        	android:background="@drawable/shape_line_top"
+        	android:layout_below="@+id/release_identifiers_label"/>
+        
+        <LinearLayout android:id="@+id/release_identifiers_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/release_identifiers_line"
+            android:orientation="vertical" />
+        
+	</RelativeLayout>
+	
+    </LinearLayout>
+    
+    </ScrollView>
+    
+</LinearLayout>

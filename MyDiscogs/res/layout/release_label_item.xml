@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/release_label_item"
+    android:layout_width="fill_parent"
+    android:layout_height="20dp"
+    android:orientation="horizontal"
+    android:gravity="top"
+    android:background="#ffffff" >
+    
+    <TextView android:id="@+id/release_label_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:textStyle="normal"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:text="Subterranean"/>
+
+    <TextView android:id="@+id/release_label_item_slash"
+        android:layout_width="10dp"
+        android:layout_height="20dp"
+        android:textStyle="normal"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:text=" - "/>
+    
+    <TextView android:id="@+id/release_label_item_catno"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:textStyle="normal"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:text="SUB 24"/>
+    
+</LinearLayout>

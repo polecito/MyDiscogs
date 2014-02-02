@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/release_extraartist_item"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="top"
+    android:background="#ffffff" >
+    
+    <TextView android:id="@+id/release_extraartist_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textStyle="normal"
+        android:textSize="14sp"
+        android:textColor="@color/gray"
+        android:text="Lead Vocals"/>
+
+    <TextView android:id="@+id/release_extraartist_item_slash"
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/release_extraartist_item_name"
+        android:textStyle="normal"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:text=" - "/>
+    
+    <TextView android:id="@+id/release_extraartist_item_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/release_extraartist_item_slash"
+        android:textStyle="normal"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:text="Jaume Oró"/>
+    
+</RelativeLayout>

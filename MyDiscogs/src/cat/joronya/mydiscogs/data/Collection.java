@@ -31,9 +31,6 @@ public class Collection implements BaseColumns
 	@SerializedName("notes")
 	public List<Notes> notes;
 	
-	// thumb ve dins el basic_information (release resumit) al llistat nomes
-	public static final String THUMB = "thumb";
-	
 	public static final String BASIC_INFORMATION = "basic_information";
 	@SerializedName("basic_information")
 	public Release basicInformation;
@@ -59,7 +56,7 @@ public class Collection implements BaseColumns
 		FOLDER_ID,										// 3
 		RATING,											// 4
 		NOTES,											// 5
-		THUMB,											// 6
+		Release.THUMB,									// 6
 		Release.TITLE,									// 7
 		Release.ARTISTS									// 8
     };
@@ -82,7 +79,6 @@ public class Collection implements BaseColumns
 		values.put(RATING, rating);
 		String sNotes = new Gson().toJson(notes);
 		values.put(NOTES, sNotes);
-		values.put(THUMB, basicInformation.thumb);
 		
 		return values;
 	}

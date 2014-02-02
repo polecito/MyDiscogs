@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/release_label_item"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="top">
+    
+    <View android:id="@+id/release_tracklist_item_row0"
+        android:layout_width="fill_parent"
+        android:layout_height="5dp"
+        android:background="@drawable/shape_line_top"
+        android:layout_alignParentTop="true"/>
+    
+    <RelativeLayout android:id="@+id/release_tracklist_item_row1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/release_tracklist_item_row0">
+    
+    	<TextView android:id="@+id/release_tracklist_item_position"
+        	android:layout_width="40dp"
+        	android:layout_height="20dp"
+        	android:layout_alignParentLeft="true"
+        	android:textStyle="normal"
+        	android:textSize="14sp"
+        	android:textColor="@color/black"
+        	android:text="A12"/>
+
+    	<TextView android:id="@+id/release_tracklist_item_title"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="40dp"
+        	android:layout_marginRight="40dp"
+        	android:textStyle="normal"
+        	android:textSize="14sp"
+        	android:textColor="@color/black"
+        	android:text="Himne U.E. Lleida - Versió Cantada per equip complert"/>
+    	
+    	<TextView android:id="@+id/release_tracklist_item_duration"
+        	android:layout_width="40dp"
+        	android:layout_height="20dp"
+        	android:layout_alignParentRight="true"
+        	android:gravity="top|right"
+        	android:textStyle="normal"
+        	android:textSize="14sp"
+        	android:textColor="@color/black"
+        	android:text="10:25"/>
+    
+    </RelativeLayout>
+    
+    <LinearLayout android:id="@+id/release_tracklist_item_row2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/release_tracklist_item_row1"
+        android:paddingLeft="40dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+    	
+        <TextView android:id="@+id/release_tracklist_item_role"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:textStyle="normal"
+        	android:textSize="12sp"
+        	android:textColor="@color/black"
+        	android:text="Written-by - E. Sobredo*"/>
+        
+    </LinearLayout>
+    
+</RelativeLayout>

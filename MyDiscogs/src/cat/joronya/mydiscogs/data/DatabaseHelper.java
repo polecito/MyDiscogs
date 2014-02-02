@@ -144,7 +144,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 			+ Release.TITLE + " TEXT NOT NULL, "
 			+ Release.YEAR + " INTEGER, "
 			+ Release.URI + " TEXT, "
-			+ Release.STATUS + " TEXT, "
+			+ Release.THUMB+ " TEXT, "
 			+ Release.MASTER_ID + " INTEGER, "
 			+ Release.MASTER_URL + " TEXT, "
 			+ Release.COUNTRY + " TEXT, "
@@ -153,9 +153,8 @@ public class DatabaseHelper extends SQLiteOpenHelper
 			+ Release.STYLES + " TEXT, "
 			+ Release.GENRES + " TEXT, "
 			+ Release.COMMUNITY + " TEXT, "
-			+ Release.SUBMITTER + " TEXT, "
-			+ Release.CONTRIBUTORS + " TEXT, "
 			+ Release.LABELS + " TEXT, "
+			+ Release.SERIES + " TEXT, "
 			+ Release.COMPANIES + " TEXT, "
 			+ Release.FORMATS + " TEXT, "
 			+ Release.IMAGES + " TEXT, "
@@ -175,7 +174,6 @@ public class DatabaseHelper extends SQLiteOpenHelper
 			+ Collection.FOLDER_ID + " INTEGER NOT NULL, "
 			+ Collection.RATING + " INTEGER DEFAULT 0, "
 			+ Collection.NOTES + " TEXT, "
-			+ Collection.THUMB + " TEXT, "
 			+ "UNIQUE("+Collection.RELEASE_ID+","+Collection.INSTANCE_ID+","+Collection.FOLDER_ID+") "
 			+ ");");
 	}

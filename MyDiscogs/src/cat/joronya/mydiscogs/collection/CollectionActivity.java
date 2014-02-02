@@ -3,6 +3,7 @@ package cat.joronya.mydiscogs.collection;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -44,25 +45,25 @@ public class CollectionActivity extends DrawerActivity
 	{
 		List<Fragment> fragments = new ArrayList<Fragment>();
 		
-        public MyAdapter(FragmentManager fm) 
+        public MyAdapter(FragmentManager fm, Context context) 
         {
             super(fm);
             CollectionFragment releases = new CollectionFragment();
-            releases.setTitle("Edicions");
+            releases.setTitle(context.getString(R.string.collection_releases_tab_title));
             releases.setSortOrder(Collection.NAME_SORT_ORDER);
             fragments.add(releases);
             
             CollectionFragment recents = new CollectionFragment();
-            recents.setTitle("Més recents");
+            recents.setTitle(context.getString(R.string.collection_recent_tab_title));
             recents.setSortOrder(Collection.RECENT_SORT_ORDER);
             fragments.add(recents);
 
             ArtistsFragment artists = new ArtistsFragment();
-            artists.setTitle("Artistes");
+            artists.setTitle(context.getString(R.string.collection_artists_tab_title));
             fragments.add(artists);
 
             CollectionFragment labels = new CollectionFragment();
-            labels.setTitle("Segell discogràfic");
+            labels.setTitle(context.getString(R.string.collection_labels_tab_title));
             labels.setSortOrder(Collection.NAME_SORT_ORDER);
             fragments.add(labels);
         }
@@ -109,7 +110,7 @@ public class CollectionActivity extends DrawerActivity
     		
         	final ActionBar actionBar = getSupportActionBar();
 
-        	mPagerAdapter = new MyAdapter(getSupportFragmentManager());
+        	mPagerAdapter = new MyAdapter(getSupportFragmentManager(), this);
         	mViewPager = (ViewPager) findViewById(R.id.pager);
             mViewPager.setAdapter(mPagerAdapter);
 

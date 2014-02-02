@@ -35,5 +35,12 @@
     <string name="artists_search_hint">search artists</string>
     <string name="artists_search_title">Search</string>
     <string name="artists_actionbar_title">Artists</string>
+    <string name="release_detail_title">Release</string>
+    <string name="release_release_tab_title">Release</string>
+    <string name="release_master_tab_title">Master</string>
+    <string name="release_collection_tab_title">Collection</string>
+    <string name="release_refresh_menu">Refresh</string>
+    <string name="release_text_message">Release information from Discogs™.</string>
+    <string name="master_text_message">Master release information from Discogs™.</string>
     
 </resources>

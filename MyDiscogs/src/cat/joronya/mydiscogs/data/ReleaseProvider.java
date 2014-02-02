@@ -23,7 +23,7 @@ public class ReleaseProvider extends ContentProvider
 	static {
 		uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 		uriMatcher.addURI(Release.AUTHORITY, "releases", RELEASES);
-		uriMatcher.addURI(Release.AUTHORITY, "release/#", RELEASE_ID);
+		uriMatcher.addURI(Release.AUTHORITY, "releases/#", RELEASE_ID);
 	}
 	
     private DatabaseHelper mOpenHelper;
@@ -46,7 +46,7 @@ public class ReleaseProvider extends ContentProvider
 
 		case RELEASE_ID:
 			String id = uri.getPathSegments().get(1);
-			count = db.delete(DatabaseHelper.RELEASES_TABLE_NAME, Release._ID + "=" + id
+			count = db.delete(DatabaseHelper.RELEASES_TABLE_NAME, Release.ID + "=" + id
 					+ (!TextUtils.isEmpty(where) ? " AND (" + where + ')' : ""), whereArgs);
 			break;
 
@@ -108,7 +108,7 @@ public class ReleaseProvider extends ContentProvider
 
 		// recuperant un jugador concreta
 		if( uriMatcher.match(uri) == RELEASE_ID )
-			sqlBuilder.appendWhere(Release._ID + " = " + uri.getPathSegments().get(1));                
+			sqlBuilder.appendWhere(Release.ID + " = " + uri.getPathSegments().get(1));                
 
 		// If no sort order is specified use the default
         String orderBy;
@@ -147,7 +147,7 @@ public class ReleaseProvider extends ContentProvider
 
 		case RELEASE_ID:
 			String id = uri.getPathSegments().get(1);
-			count = db.update(DatabaseHelper.RELEASES_TABLE_NAME, values, Release._ID + "=" + id
+			count = db.update(DatabaseHelper.RELEASES_TABLE_NAME, values, Release.ID + "=" + id
 					+ (!TextUtils.isEmpty(where) ? " AND (" + where + ')' : ""), whereArgs);
 			break;
 

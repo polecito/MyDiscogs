@@ -6,6 +6,7 @@ import java.util.List;
 import android.content.ContentValues;
 import android.net.Uri;
 import android.provider.BaseColumns;
+import android.text.TextUtils;
 import cat.joronya.mydiscogs.MyDiscogs;
 
 import com.google.gson.Gson;
@@ -13,6 +14,8 @@ import com.google.gson.annotations.SerializedName;
 
 public class Release implements BaseColumns 
 {
+	public int _id;
+	
 	public static final String ID = "id";
 	public int id;
 	
@@ -27,9 +30,6 @@ public class Release implements BaseColumns
 	
 	public static final String THUMB = "thumb";
 	public String thumb;
-	
-	public static final String STATUS = "status";
-	public String status;
 	
 	public static final String MASTER_ID = "master_id";
 	@SerializedName("master_id")
@@ -57,14 +57,11 @@ public class Release implements BaseColumns
 	public static final String COMMUNITY = "community";
 	public Community community;
 	
-	public static final String SUBMITTER = "submitter";
-	public User submitter;
-	
-	public static final String CONTRIBUTORS = "contributors";
-	public List<User> contributors;
-	
 	public static final String LABELS = "labels";
 	public List<Label> labels;
+	
+	public static final String SERIES = "series";
+	public List<Label> series;
 	
 	public static final String COMPANIES = "companies";
 	public List<Company> companies;
@@ -107,13 +104,15 @@ public class Release implements BaseColumns
     
     public static final String ERROR_EXTRA = "error";
     
+    public static final String PERCENT_EXTRA = "percent";
+    
     public static final String[] PROJECTION = new String[]{
     	_ID,			// 0
 		ID,				// 1
 		TITLE,			// 2
 		YEAR,			// 3
 		URI,			// 4
-		STATUS,			// 5
+		THUMB,			// 5
 		MASTER_ID,		// 6
 		MASTER_URL,		// 7
 		COUNTRY,		// 8
@@ -122,18 +121,17 @@ public class Release implements BaseColumns
 		STYLES,			// 11
 		GENRES,			// 12
 		COMMUNITY,		// 13
-		SUBMITTER,		// 14
-		CONTRIBUTORS,	// 15
-		LABELS,			// 16
-		COMPANIES,		// 17
-		FORMATS,		// 18
-		IMAGES,			// 19
-		ARTISTS,		// 20
-		EXTRA_ARTISTS,	// 21
-		TRACKLIST,		// 22
-		IDENTIFIERS,	// 23
-		VIDEOS,			// 24
-		DOWNLOADED		// 25
+		LABELS,			// 14
+		SERIES,			// 15
+		COMPANIES,		// 16
+		FORMATS,		// 17
+		IMAGES,			// 18
+		ARTISTS,		// 19
+		EXTRA_ARTISTS,	// 20
+		TRACKLIST,		// 21
+		IDENTIFIERS,	// 22
+		VIDEOS,			// 23
+		DOWNLOADED		// 24
     };
     
     public static final String DEFAULT_SORT_ORDER = TITLE+" ASC";
@@ -151,50 +149,87 @@ public class Release implements BaseColumns
 	 * @param downloadTimestamp Download timestamp.
 	 * @return
 	 */
-	public ContentValues toContentValues(boolean fullExport, int downloadTimestamp)
+	public ContentValues toContentValues(boolean fullExport, long downloadTimestamp)
 	{
 		ContentValues values = new ContentValues();
 		values.put(ID, id);
 		values.put(TITLE, title);
 		values.put(YEAR, year);
-		String sFormats = new Gson().toJson(formats);
-		values.put(FORMATS, sFormats);
-		String sLabels = new Gson().toJson(labels);
-		values.put(LABELS, sLabels);
-		String sArtists = new Gson().toJson(artists);
-		values.put(ARTISTS, sArtists);
+		values.put(THUMB, thumb);
+		if( formats != null )
+		{
+			String sFormats = new Gson().toJson(formats);
+			values.put(FORMATS, sFormats);
+		}
+		if( labels != null )
+		{
+			String sLabels = new Gson().toJson(labels);
+			values.put(LABELS, sLabels);
+		}
+		if( series != null )
+		{
+			String sSeries = new Gson().toJson(series);
+			values.put(SERIES, sSeries);
+		}
+		if( artists != null )
+		{
+			String sArtists = new Gson().toJson(artists);
+			values.put(ARTISTS, sArtists);
+		}
 		
 		if( fullExport )
 		{
 			values.put(URI, uri);
-			values.put(STATUS, status);
 			values.put(MASTER_ID, masterId);
 			values.put(MASTER_URL, masterUrl);
 			values.put(COUNTRY, country);
 			values.put(RELEASED, released);
 			values.put(NOTES, notes);
-			String sGenres = new Gson().toJson(genres);
-			values.put(GENRES, sGenres);
-			String sStyles = new Gson().toJson(styles);
-			values.put(STYLES, sStyles);
-			String sCommunity = new Gson().toJson(community);
-			values.put(COMMUNITY, sCommunity);
-			values.put(SUBMITTER, submitter.username);
-			String sContributors = new Gson().toJson(contributors);
-			values.put(CONTRIBUTORS, sContributors);
-			String sCompanies = new Gson().toJson(companies);
-			values.put(COMPANIES, sCompanies);
-			String sImages = new Gson().toJson(images);
-			values.put(IMAGES, sImages);
-			String sExtraArtists = new Gson().toJson(extraArtists);
-			values.put(EXTRA_ARTISTS, sExtraArtists);
-			String sTracklist = new Gson().toJson(tracklist);
-			values.put(TRACKLIST, sTracklist);
-			String sIdentifiers = new Gson().toJson(identifiers);
-			values.put(IDENTIFIERS, sIdentifiers);
-			String sVideos = new Gson().toJson(videos);
-			values.put(VIDEOS, sVideos);
-			
+			if( genres != null )
+			{
+				String sGenres = new Gson().toJson(genres);
+				values.put(GENRES, sGenres);
+			}
+			if( styles != null )
+			{
+				String sStyles = new Gson().toJson(styles);
+				values.put(STYLES, sStyles);
+			}
+			if(community != null)
+			{
+				String sCommunity = new Gson().toJson(community);
+				values.put(COMMUNITY, sCommunity);
+			}
+			if( companies != null )
+			{
+				String sCompanies = new Gson().toJson(companies);
+				values.put(COMPANIES, sCompanies);
+			}
+			if( images != null )
+			{
+				String sImages = new Gson().toJson(images);
+				values.put(IMAGES, sImages);
+			}
+			if( extraArtists != null )
+			{
+				String sExtraArtists = new Gson().toJson(extraArtists);
+				values.put(EXTRA_ARTISTS, sExtraArtists);
+			}
+			if( tracklist != null )
+			{
+				String sTracklist = new Gson().toJson(tracklist);
+				values.put(TRACKLIST, sTracklist);
+			}
+			if( identifiers != null )
+			{
+				String sIdentifiers = new Gson().toJson(identifiers);
+				values.put(IDENTIFIERS, sIdentifiers);
+			}
+			if( videos != null )
+			{
+				String sVideos = new Gson().toJson(videos);
+				values.put(VIDEOS, sVideos);
+			}
 			// mark that detail download has been done
 			values.put(DOWNLOADED, downloadTimestamp);
 		}
@@ -228,5 +263,65 @@ public class Release implements BaseColumns
 		}
 		
 		return ret;
+	}
+	
+
+	public String getCompoundArtistName()
+	{
+		String name = "";
+		
+		for(Artist artist: artists)
+		{
+			if( !TextUtils.isEmpty(artist.anv) )
+				name += artist.anv;
+			else
+				name += artist.name;
+			
+			if( !TextUtils.isEmpty(artist.join) )
+				name += " "+artist.join+" ";
+			
+		}
+		
+		return name;
+	}
+	
+	public String getCompoundLabelName(Label label)
+	{
+		String retLabel = "";
+		retLabel += label.name;
+		if( !TextUtils.isEmpty(label.catno) )
+			retLabel += " - " + label.catno;
+		
+		return retLabel;
+	}
+	
+	public String getCompoundGenresName()
+	{
+		String retGenres = "";
+		
+		for(int i=0; i<genres.size(); i++)
+		{
+			if( i != 0 )
+				retGenres += ", ";
+			
+			retGenres += genres.get(i);
+		}
+		
+		return retGenres;
+	}
+	
+	public String getCompoundStylesName()
+	{
+		String retStyles = "";
+		
+		for(int i=0; i<styles.size(); i++)
+		{
+			if( i != 0 )
+				retStyles += ", ";
+			
+			retStyles += styles.get(i);
+		}
+		
+		return retStyles;
 	}
 }
