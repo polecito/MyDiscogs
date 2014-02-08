@@ -1,8 +1,12 @@
 package cat.joronya.mydiscogs.collection;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import android.app.Activity;
 import android.content.Context;
@@ -32,6 +36,7 @@ import cat.joronya.mydiscogs.data.Company;
 import cat.joronya.mydiscogs.data.Format;
 import cat.joronya.mydiscogs.data.Identifier;
 import cat.joronya.mydiscogs.data.Label;
+import cat.joronya.mydiscogs.data.Notes;
 import cat.joronya.mydiscogs.data.Release;
 import cat.joronya.mydiscogs.data.Track;
 import cat.joronya.utils.image.ImageDownloader;
@@ -52,13 +57,12 @@ public class ReleaseFragment extends Fragment
 
 	public static final String[] FROM_TRACKLIST = 
 			new String[]{ Track.POSITION, Track.TITLE, Track.DURATION, 
-						  Track.EXTRA_ARTISTS, Track.EXTRA_ARTISTS };
+						  Track.EXTRA_ARTISTS };
 	public static final int[] TO_TRACKLIST = 
 			new int[]{ R.id.release_tracklist_item_position, 
 					   R.id.release_tracklist_item_title, 
 					   R.id.release_tracklist_item_duration, 
-					   R.id.release_tracklist_item_row2, 
-					   R.id.release_tracklist_item_role};
+					   R.id.release_tracklist_item_row2};
 
 	public static final String[] FROM_COMPANIES = 
 			new String[]{ Company.ID, Company.ENTITY_TYPE_NAME, Company.NAME };
@@ -533,6 +537,8 @@ public class ReleaseFragment extends Fragment
 			
 			mTracks = tracks;
 			
+			final Context fContext = context;
+			
 			setViewBinder(new ViewBinder() 
 	    	{
 				@Override
@@ -556,15 +562,37 @@ public class ReleaseFragment extends Fragment
 						if( TextUtils.isEmpty(textRepresentation) )
 							view.setVisibility(View.GONE);
 						else
+						{
 							view.setVisibility(View.VISIBLE);
-						break;
-					case R.id.release_tracklist_item_role:
-						TextView roleView = (TextView)view;
-						roleView.setText(textRepresentation);
+							setCredits(view, textRepresentation);
+						}
 						break;
 					}
 					
 					return true;
+				}
+				
+				public void setCredits(View view, String textRepresentation)
+				{
+					// recuperem els artists del json
+					Type type = new TypeToken<java.util.Collection<Artist>>() {}.getType();
+					java.util.Collection<Artist> extraArtists = new Gson().fromJson(textRepresentation, type);
+					
+					List<HashMap<String,String>> extraArtistList = getExtraArtists((List<Artist>)extraArtists);
+					
+					// creem nou adapter
+					ExtraArtistsAdapter extraArtistsAdapter = new ExtraArtistsAdapter(fContext, extraArtistList);
+					
+					// borrem els credits d'un altre track cachejats
+					LinearLayout creditsList = (LinearLayout)view;
+					creditsList.removeAllViews();
+					
+					// afegim els nous recorrent l'adapter
+					for( int i=0; i<extraArtistsAdapter.getCount(); i++ )
+					{
+						View row = extraArtistsAdapter.getView(i, null, creditsList);
+						creditsList.addView(row);
+					}
 				}
 	    	});
 		}
@@ -581,7 +609,11 @@ public class ReleaseFragment extends Fragment
 			item.put(Track.POSITION, track.position);
 			item.put(Track.TITLE, track.title);
 			item.put(Track.DURATION, track.duration);
-			item.put(Track.EXTRA_ARTISTS, "Written-by - E. Sobredo*");//track.extraArtists);
+			
+			String sExtraArtists = "";
+			if( track.extraArtists != null )
+				sExtraArtists = new Gson().toJson(track.extraArtists);
+			item.put(Track.EXTRA_ARTISTS, sExtraArtists);
 			
 			items.add(item);
 		}
@@ -689,7 +721,10 @@ public class ReleaseFragment extends Fragment
 			HashMap<String, String> item = new HashMap<String, String>();
 			item.put(Artist.ID, artist.id+"");
 			item.put(Artist.ROLE, artist.role);
-			item.put(Artist.NAME, artist.name);
+			if( !TextUtils.isEmpty(artist.anv) )
+				item.put(Artist.NAME, artist.anv+"*");
+			else
+				item.put(Artist.NAME, artist.name);
 			
 			items.add(item);
 		}
