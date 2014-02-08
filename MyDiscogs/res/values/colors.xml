@@ -26,5 +26,14 @@
   <color name="discogs_dark_green">#49972e</color>
   <color name="discogs_red">#bf3a38</color>
   <color name="discogs_gray">#444444</color>
+  <color name="discogs_light_gray">#f2f2f2</color>
+  <color name="discogs_light_pink">#fff4f4</color>
+  <color name="discogs_dark_pink">#D4B6B6</color>
+  <color name="discogs_light_green">#f4fff4</color>
+  <color name="discogs_dark_green">#B3DAB3</color>
+  <color name="discogs_blue">#0033BB</color>
+  <color name="discogs_button_border_gray">#D3D3D3</color>
+  <color name="discogs_button_dark_gray">#f2f2f2</color>
+  <color name="discogs_button_light_gray">#fafafa</color>
   
 </resources>
