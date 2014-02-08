@@ -57,7 +57,7 @@ public class Field  implements BaseColumns
 		LINES		// 7
     };
     
-    public static final String DEFAULT_SORT_ORDER = NAME+" ASC";
+    public static final String DEFAULT_SORT_ORDER = POSITION+" ASC";
 	
 	public Field()
 	{}
