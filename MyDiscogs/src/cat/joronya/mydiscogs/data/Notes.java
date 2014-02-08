@@ -9,7 +9,7 @@ public class Notes
 	
 	public static final String FIELD_ID = "field_id";
 	@SerializedName("field_id")
-	public String fieldId;
+	public int fieldId;
 
 	public Notes() {}
 }
