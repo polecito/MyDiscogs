@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<item>
+    <shape android:shape="rectangle" tools:ignore="RequiredSize">
+        
+        <corners android:bottomLeftRadius="2dp"
+        	android:bottomRightRadius="2dp"
+        	android:topLeftRadius="2dp"
+        	android:topRightRadius="2dp" />
+        
+        <solid android:color="@color/discogs_button_border_gray" />
+    </shape>
+</item>
+    
+<item android:top="1dp" android:bottom="1dp" android:left="1dp" android:right="1dp">
+    <shape android:shape="rectangle" tools:ignore="RequiredSize">
+        <solid android:color="@color/discogs_button_dark_gray" />
+    </shape>
+</item>
+
+</layer-list>
