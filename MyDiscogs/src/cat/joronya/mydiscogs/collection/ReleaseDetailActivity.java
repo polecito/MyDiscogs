@@ -69,13 +69,13 @@ public class ReleaseDetailActivity extends BaseActionBarActivity
             release.setTitle(context.getString(R.string.release_release_tab_title));
             fragments.add(release);
             
+            ReleaseCollectionFragment collection = new ReleaseCollectionFragment();
+            collection.setTitle(context.getString(R.string.release_collection_tab_title));
+            fragments.add(collection);
+            
             MasterFragment master = new MasterFragment();
             master.setTitle(context.getString(R.string.release_master_tab_title));
             fragments.add(master);
-            
-            MasterFragment collection = new MasterFragment();
-            collection.setTitle(context.getString(R.string.release_collection_tab_title));
-            fragments.add(collection);
         }
 
         @Override
