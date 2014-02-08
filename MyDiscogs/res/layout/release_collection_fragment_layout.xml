@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:tag="mobile"
+    android:orientation="vertical"
+    android:gravity="top"
+    android:background="#ffffff" >
+
+    <ScrollView android:id="@+id/release_collection_scroll"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent">
+		
+    <LinearLayout 
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="vertical">
+    
+    <LinearLayout android:id="@+id/release_collection_buttons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+		
+        <Button android:id="@+id/release_collection_add_to_collection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textStyle="normal"
+            android:textSize="18sp"
+            android:textColor="@color/dark_gray"
+            android:text="+ Add to collection"
+            android:background="@drawable/pushable_gray_button"/>
+        
+        <Button android:id="@+id/release_collection_add_to_wantlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textStyle="normal"
+            android:textSize="18sp"
+            android:textColor="@color/dark_gray"
+            android:text="+ Add to wantlist"
+            android:background="@drawable/pushable_gray_button"/>
+        
+	</LinearLayout>
+    
+    <ListView android:id="@+id/release_collection_col_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp"
+        android:orientation="vertical" />
+    
+    <ListView android:id="@+id/release_collection_want_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp"
+        android:orientation="vertical" />
+	
+    </LinearLayout>
+    
+    </ScrollView>
+    
+</LinearLayout>
