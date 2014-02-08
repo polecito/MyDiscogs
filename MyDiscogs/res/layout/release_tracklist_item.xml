@@ -50,18 +50,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/release_tracklist_item_row1"
-        android:paddingLeft="40dp"
+        android:paddingLeft="50dp"
         android:orientation="vertical"
         android:visibility="visible">
     	
-        <TextView android:id="@+id/release_tracklist_item_role"
-        	android:layout_width="fill_parent"
-        	android:layout_height="wrap_content"
-        	android:textStyle="normal"
-        	android:textSize="12sp"
-        	android:textColor="@color/black"
-        	android:text="Written-by - E. Sobredo*"/>
-        
     </LinearLayout>
     
 </RelativeLayout>
